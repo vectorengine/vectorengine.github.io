@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ClickHouse 社区与开发</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+    <header class="caption">
+        <h1>ClickHouse 社区与开发</h1>
+    </header>
+
+    <section class="slide" id="cover">
+	<h1><tit>ClickHouse</tit> 社区与开发</h1>
+	<p>源码可以阅读，社区需要参与</p>
+	<p>大家都应该知道的ClickHouse社区</p>
+	<p>2020.08</p>
+    </section>
+
+    <section class="slide">
+	<h1>目录</h1>
+	<p><tit>|||</tit> ClickHouse 社区如何运作</p>
+	<p><tit>|||</tit> 如何基于 ClickHouse 打造商业产品</p>
+	<p><tit>|||</tit> 如何紧跟 ClickHouse 社区发展</p>
+	<p><tit>|||</tit> 如何为 ClickHouse 社区做贡献</p>
+    </section>
+
+
+    <section class="slide">
+        <h2>About us</h2>
+	<p><tit>|||</tit> @zhang2014 @TCeason @BohuTANG</p>
+	<p><tit>|||</tit> QingCloud ClickHouse Team</p>
+	<p><tit>|||</tit> ClickHouse 社区持续、最大贡献者</p>
+	<p><tit>|||</tit> JSONB、CustomHTTP、MaterializeMySQL、MySQL相关、优化器等</p>
+	<p><tit>|||</tit> <a href="https://www.qingcloud.com/products/chronusdb/" target="_blank">ChronusDB</a>: 基于 ClickHouse 打造的云时序数据库</p>
+	<p><tit>|||</tit> <a href="https://appcenter.qingcloud.com/apps/app-jsyrsk15/ClickHouse%20on%20QingCloud" target="_blank">ClickHouse on QingCloud</a>: 基于 ClickHouse 打造的云数据仓库</p>
+    </section>
+
+    <section class="slide">
+	<h2>ClickHouse 历史</h2>
+    </section>
+
+    <section class="slide">
+	<h2>MySQL (MyISAM), 2008-2011</h2>
+	<p><tit>|||</tit> Data Locality 问题</p>
+	<img src="pictures/data_locality.png" style="width:100%"/>
+    </section>
+
+    <section class="slide">
+	<h2>Metrage, 2010-2015</h2>
+	<p><tit>|||</tit> Metrage: Metrica + Aggregated statistics</p>
+	<p><tit>|||</tit> 不同维度聚合问题</p>
+	<p><tit>|||</tit> 需要一个真正的列存数据库</p>
+    </section>
+
+
+    <section class="slide">
+        <h2>为什么要列存?</h2>
+	<p><tit>|||</tit> row-oriented 工作模式</p>
+        <p><img src="pictures/row_oriented.gif"/></p>
+    </section>
+
+    <section class="slide">
+        <h2>为什么要列存?</h2>
+	<p><tit>|||</tit> column-oriented 工作模式</p>
+        <p><img src="pictures/column_oriented.gif"/></p>
+    </section>
+
+
+
+    <section class="slide">
+	<h2>ClickHouse, 2010-?</h2>
+	<p><tit>|||</tit> 2012 年生产使用</p>
+	<p><tit>|||</tit> 2014 年 Metrica 全部替换完成</p>
+	<p><tit>|||</tit> 2016 年 ClickHouse 开源</p>
+    </section>
+
+    <section class="slide">
+	<h2>ClickHouse, CK16 宣言</h2>
+	<p><tit>|||</tit> ClickHouse must solve actual problem</p>
+        <p><tit>|||</tit> ClickHouse must be the default choice<br/>&nbsp;&nbsp;&nbsp;as an open-source analytical DBMS</p>
+	<p><tit>|||</tit> The first and the only right solution<br/>&nbsp;&nbsp;&nbsp;for appropriate use cases</p>
+	<p><tit>|||</tit> And everyone should be aware of it </p>
+	<p><img src="pictures/ak47.jpg" style="width:40%"/> <br/></p>
+    </section>
+
+    <section class="slide">
+	<h2>ClickHouse 开源社区</h2>
+    </section>
+
+    <section class="slide">
+	<h2>ClickHouse 开源社区</h2>
+	<p><tit>|||</tit> 社区异常活跃</p>
+	<p><tit>|||</tit> Alexey，阿列克谢·米洛维多夫(译)</p>
+	<img src="pictures/github-commits.png" style="width:70%"/>
+    </section>
+
+    <section class="slide">
+	<h2>ClickHouse 开源社区</h2>
+	<p><tit>|||</tit> 500+ 贡献者</p>
+	<p><tit>|||</tit> 官方 ~12 人，承担开发、CI、文档、社区</p>
+	<img src="pictures/clickhouse-github-stats.png" style="width:70%"/>
+    </section>
+
+    <section class="slide">
+	<h2>ClickHouse 开源社区</h2>
+	<p><tit>|||</tit> 靠口碑"野蛮"式生长</p>
+	<p><tit>|||</tit> 很少推广，社群答疑、meetup、线下拜访</p>
+        <p><a href="https://github.com/ClickHouse/ClickHouse/">https://github.com/ClickHouse/ClickHouse/</a></p>
+    </section>
+
+
+    <section class="slide">
+	<h2>如何基于ClickHouse打造商业产品</h2>
+    </section>
+
+    <section class="slide">
+	<h2>商业产品化</h2>
+	<p><tit>|||</tit> Apache-2.0 License</p>
+	<p><tit>|||</tit> 比较开放</p>
+	<img src="pictures/alexey-commercial.png" style="width:70%"/>
+    </section>
+
+
+    <section class="slide">
+	<h2>版本选择</h2>
+	<p><tit>|||</tit> stable 版本: 每年 10+ 次发布(推荐)</p>
+	<p><tit>|||</tit> lts 版本: 每年 2 次发布，1 年支持周期</p>
+    </section>
+
+    <section class="slide">
+	<h2>发版流程</h2>
+	<p><tit>|||</tit> testing: 两周 1 次</p>
+	<p><tit>|||</tit> prestable: 两周 1 次</p>
+	<p><tit>|||</tit> stable: 每月 1 次</p>
+	<p><tit>|||</tit> lts (long-term support):半年 1 次</p>
+        <p><a href="https://repo.clickhouse.tech/">https://repo.clickhouse.tech/</a></p>
+    </section>
+
+    <section class="slide">
+	<h2>版本选择(2020.08.26)</h2>
+	<p><tit>|||</tit> stable: 20.6.4.44</p>
+	<p><tit>|||</tit> lts: 20.3.9.70 </p>
+    </section>
+
+    <section class="slide">
+	<h2>版本维修</h2>
+	<p><tit>|||</tit> (stable/lts)版本怎么 backport bugfix ...?</p>
+    </section>
+
+    <section class="slide">
+	<h2>版本维修</h2>
+	<p><tit>|||</tit> Cherry Pick</p>
+	<p><tit>|||</tit> ClickHouse Robot</p>
+	<img src="pictures/clickhouse-github-backport.png" style="width:70%"/>
+    </section>
+
+    <section class="slide">
+	<h2>版本维修</h2>
+	<p><tit>|||</tit> Cherry Pick</p>
+	<img src="pictures/clickhouse-github-robot-pr.png" style="width:70%"/>
+    </section>
+
+    <section class="slide">
+	<h2>版本维修, robot</h2>
+	<p><tit>|||</tit> 扫描[pr-] label</p>
+	<p><tit>|||</tit> 生成 Pull Request, 指定 Reviewer</p>
+	<p><tit>|||</tit> Reviewer 处理</p>
+        <p><a href="https://github.com/ClickHouse/ClickHouse/blob/master/utils/github/backport.py">https://github.com/ClickHouse/ClickHouse/blob/master/utils/github/backport.py</a></p>
+    </section>
+
+
+    <section class="slide">
+	<h2>版本维修</h2>
+	<p><tit>|||</tit> 定期同步到某个 tag</p>
+	<p><tit>|||</tit> 适合商业化公司</p>
+	<img src="pictures/clickhouse-github-tags.png" style="width:30%"/>
+    </section>
+
+    <section class="slide">
+	<h2>如何实时跟踪社区？</h2>
+    </section>
+
+    <section class="slide">
+	<h2>时区</h2>
+	<p><tit>|||</tit> 莫斯科比北京慢 5 小时</p>
+	<p><tit>|||</tit> 北京时间上午跟踪，莫斯科时间下午起床</p>
+    </section>
+
+    <section class="slide">
+	<h2>Slack</h2>
+	<p><tit>|||</tit> <a href="https://join.slack.com/t/clickhousedb/shared_invite/zt-d2zxkf9e-XyxDa_ucfPxzuH4SJIm~Ng" target="_blank">clickhousedb</a> 订阅github所有状态</p>
+	<img src="pictures/clickhouse-slack-github.jpg" style="width:40%"/>
+    </section>
+
+    <section class="slide">
+	<h2>电报群</h2>
+	<p><tit>|||</tit> ClickHouse, 对外开放</p>
+	<p><tit>|||</tit> ClickHouse developers，需要邀请</p>
+	<img src="pictures/clickhouse-telgram.png" style="width:70%"/>
+    </section>
+
+    <section class="slide">
+	<h2>电报群</h2>
+	<p><tit>|||</tit> 俄语为主，机器人实时英文翻译</p>
+	<img src="pictures/clickhouse-channel.png" style="width:70%"/>
+    </section>
+
+
+
+    <section class="slide">
+	<h2>Roadmap</h2>
+        <p>Roadmap: <a href="https://github.com/ClickHouse/ClickHouse/" target="_blank">https://github.com/ClickHouse/ClickHouse/blob/master/docs/ru/whats-new/extended-roadmap.md</a></p>
+    </section>
+
+
+    <section class="slide">
+	<h2>如何为 ClickHouse社区做贡献 </h2>
+	<p><tit>|||</tit> typo</p>
+	<p><tit>|||</tit> 文档完善、翻译</p>
+	<p><tit>|||</tit> 功能开发</p>
+	<p><tit>|||</tit> bug 修复</p>
+	<p><tit>|||</tit> 社区推广</p>
+    </section>
+
+    <section class="slide">
+	<h2>Pull Request </h2>
+	<p><tit>|||</tit> 默认同意代码许可协议(CLA)</p>
+	<p><tit>|||</tit> 选择分类</p>
+	<p><tit>|||</tit> 建议选择 Draft 模式</p>
+	<img src="pictures/clickhouse-github-create-pr.png" style="width:40%"/>
+    </section>
+
+    <section class="slide">
+	<h2>Pull Request</h2>
+	<p><tit>|||</tit> [can be tested] 标签</p>
+	<p><tit>|||</tit> CI 开跑</p>
+	<p><tit>|||</tit> Reviewer</p>
+	<p><tit>|||</tit> Merged</p>
+
+    </section>
+
+
+    <section class="slide">
+	<h2>CI 测试</h2>
+	<p><tit>|||</tit> Functional Tests</p>
+	<p><tit>|||</tit> Integration Tests (docker)</p>
+	<p><tit>|||</tit> Unit Tests</p>
+	<img src="pictures/clickhouse-github-ci.png" style="width:50%"/>
+        <p><a href="https://github.com/ClickHouse/ClickHouse/pull/13820" target="_blank">https://github.com/ClickHouse/ClickHouse/pull/13820</a></p>
+    </section>
+
+
+
+    <section class="slide">
+        <p>官方: <a href="https://clickhouse.tech/">https://clickhouse.tech/</a></p>
+        <p>代码: <a href="https://github.com/ClickHouse/ClickHouse/">https://github.com/ClickHouse/ClickHouse/</a></p>
+        <p>博客: <a href="https://bohutang.me">https://bohutang.me</a></p>
+	<img src="pictures/blog-bohutang-clickhouse.png" style="width:30%"/>
+    </section>
+
+    <section class="slide">
+        <h2>&nbsp;</h2>
+        <p style="font-size: 40px;">Thank you. Questions.</p>
+    </section>
+
+    <div class="progress"></div>
+    <script src="shower/shower.min.js"></script>
+</body>
+</html>
