@@ -135,7 +135,7 @@
 	<p><tit>|||</tit> testing: 两周 1 次</p>
 	<p><tit>|||</tit> prestable: 两周 1 次</p>
 	<p><tit>|||</tit> stable: 每月 1 次</p>
-	<p><tit>|||</tit> lts (long-term support):半年 1 次</p>
+	<p><tit>|||</tit> lts (long-term support): 半年 1 次</p>
         <p><a href="https://repo.clickhouse.tech/">https://repo.clickhouse.tech/</a></p>
     </section>
 
@@ -166,8 +166,8 @@
     <section class="slide">
 	<h2>版本维修, robot</h2>
 	<p><tit>|||</tit> 扫描[pr-] label</p>
-	<p><tit>|||</tit> 生成 Pull Request, 指定 Reviewer</p>
-	<p><tit>|||</tit> Reviewer 处理:close or merged</p>
+	<p><tit>|||</tit> 生成 pull request, 指定 reviewer</p>
+	<p><tit>|||</tit> reviewer 处理: close or merge</p>
         <p><a href="https://github.com/ClickHouse/ClickHouse/blob/master/utils/github/backport.py" target="_blank">https://github.com/ClickHouse/ClickHouse/blob/master/utils/github/backport.py</a></p>
     </section>
 
@@ -189,13 +189,25 @@
 
 
     <section class="slide">
-	<h2>如何方便用户接入？</h2>
-	<p><tit>|||</tit> ClickHouse Client太重</p>
+	<h2>如何方便用户业务接入？</h2>
 	<p><tit>|||</tit> REST API HTTP(推荐)</p>
-	<p><tit>|||</tit> JDBC</p>
-
         <p><a href="https://docs.qingcloud.com/product/database_cache/app_ChronusDB/app_ChronusDB_use/index.html" target="_blank">ChronusDB on QingCloud 使用方法</a></p>
     </section>
+
+    <section class="slide">
+	<h2>REST HTTP</h2>
+	<p>http://localhost:8123?query=SELECT a FROM default.t1 WHERE b = 1</p>
+    </section>
+
+
+    <section class="slide active">
+	<h2>Custom HTTP</h2>
+
+	<p><tit>|||</tit> 配置URL: xxx/{database_name}/{table_name}<p/>
+	<p><tit>|||</tit> 配置QUERY: SELECT a FROM `${database_name}`.`${table_name}` WHERE b = {id:UInt8}</p>
+	<p>http://localhost:8123/xxx/default/t1?id=1</p>
+    </section>
+
 
 
 
@@ -249,7 +261,7 @@
 	<h2>Pull Request </h2>
 	<p><tit>|||</tit> 默认同意代码许可协议(CLA)</p>
 	<p><tit>|||</tit> 选择分类</p>
-	<p><tit>|||</tit> 建议选择 Draft 模式</p>
+	<p><tit>|||</tit> 建议选择 draft</p>
 	<img src="pictures/clickhouse-github-create-pr.png" style="width:40%"/>
     </section>
 
@@ -260,17 +272,25 @@
 	<p><tit>|||</tit> Reviewer</p>
 	<p><tit>|||</tit> Approved</p>
 	<p><tit>|||</tit> Merged</p>
-	<p><tit>|||</tit> 进入testing分支</p>
+	<p><tit>|||</tit> 进入 testing 分支</p>
     </section>
 
 
     <section class="slide">
 	<h2>CI 测试</h2>
+	<p><tit>|||</tit> Unit Tests</p>
 	<p><tit>|||</tit> Functional Tests</p>
 	<p><tit>|||</tit> Integration Tests (docker)</p>
-	<p><tit>|||</tit> Unit Tests</p>
-	<img src="pictures/clickhouse-github-ci.png" style="width:50%"/>
+	<img src="pictures/clickhouse-github-ci.png" style="width:100%"/>
         <p><a href="https://github.com/ClickHouse/ClickHouse/pull/13820" target="_blank">https://github.com/ClickHouse/ClickHouse/pull/13820</a></p>
+    </section>
+
+
+    <section class="slide">
+	<h2>Build check</h2>
+	<p><tit>|||</tit> gcc</p>
+	<p><tit>|||</tit> clang</p>
+	<img src="pictures/clickhouse-builds.png" style="width:100%"/>
     </section>
 
 
